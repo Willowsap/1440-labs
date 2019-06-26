@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Scene2
+comment0.text=\r\n\ Postlab\ for\ Lab\ 4.\r\n\ Creates\ a\ fun\ scene\ out\ of\ basic\ shapes.\r\n\ \r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 5/20/2019\r\n
+comment1.params=
+comment1.target=Scene2()
+comment2.params=
+comment2.target=void\ animate()
+comment3.params=numSnowPeople\ minX\ maxX\ minY\ maxY
+comment3.target=void\ addSnowPeople(int,\ int,\ int,\ int,\ int)
+comment4.params=numBarns\ minX\ maxX\ minY\ maxY
+comment4.target=void\ addBarns(int,\ int,\ int,\ int,\ int)
+comment5.params=numFlowers\ minX\ maxX\ minY\ maxY
+comment5.target=void\ addFlowers(int,\ int,\ int,\ int,\ int)
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+comment6.text=\r\n\ It\ all\ starts\ here.\r\n\ @param\ args\ command\ line\ arguments\ (unused)\r\n
+numComments=7

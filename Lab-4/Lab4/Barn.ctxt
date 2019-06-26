@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Barn
+comment0.text=\r\n\ Constructs\ a\ beautiful\ barn.\r\n\r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
+comment1.params=xPos\ yPos\ width\ wallColor\ roofColor\ doorColor
+comment1.target=Barn(int,\ int,\ int,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Collects\ and\ calculates\ all\ required\ information\ for\ the\ barn.\r\n\ Builds\ the\ barn\ but\ does\ not\ display\ it.\r\n\ @param\ xPos\ the\ x\ coordinate\ at\ which\ to\ place\ the\ barn\r\n\ @param\ yPos\ the\ y\ coordinate\ at\ which\ to\ place\ the\ bottom\ of\ the\ barn\r\n\ @param\ width\ the\ width\ of\ the\ barn\r\n\ @param\ wallColor\ the\ color\ of\ the\ walls\ of\ the\ barn\r\n\ @param\ roofColor\ the\ color\ of\ the\ roof\ of\ the\ barn\r\n\ @param\ doorColor\ the\ color\ of\ the\ doors\ of\ the\ barn\r\n
+comment2.params=
+comment2.target=void\ build()
+comment2.text=\r\n\ Builds\ the\ shapes\ for\ the\ barn.\r\n
+comment3.params=
+comment3.target=void\ getSizes()
+comment3.text=\r\n\ Creates\ a\ hashmap\ of\ barn\ parts\ to\ their\ sizes.\r\n\ {\ String\ barnPart\ \:\ int\ size\ }\r\n\ @param\ width\ the\ width\ of\ the\ of\ the\ barn.\r\n\ \ \ \ \ \ used\ to\ correctly\ proportion\ the\ other\ barn\ parts.\r\n\ @return\ the\ hashmap\r\n
+comment4.params=
+comment4.target=void\ getPositions()
+comment4.text=\r\n\ Creates\ a\ hashmap\ of\ barn\ parts\ to\ their\ coordinates.\r\n\ {\ String\ barnPartX\ \:\ int\ xCoordinate,\r\n\ \ \ String\ barnPartY\ \:\ int\ yCoordinate\ }\r\n\ @param\ width\ the\ width\ of\ the\ of\ the\ barn.\r\n\ \ \ \ \ \ used\ to\ correctly\ proportion\ the\ other\ barn\ parts.\r\n\ @param\ x\ the\ x\ coordinate\ for\ the\ center\ of\ the\ barn\r\n\ @param\ y\ the\ y\ coordinate\ for\ the\ bottom\ of\ the\ barn\r\n\ @return\ the\ hashmap\r\n
+numComments=5

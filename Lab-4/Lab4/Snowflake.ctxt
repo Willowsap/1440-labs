@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Snowflake
+comment0.text=\r\n\ Constructs\ a\ beautiful\ snow\ using\ basic\ shapes.\r\n\r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
+comment1.params=xPos\ yPos\ size
+comment1.target=Snowflake(int,\ int,\ int)
+comment1.text=\r\n\ Collects\ and\ calculates\ all\ required\ information\ for\ the\ snowflake.\r\n\ Builds\ the\ snow\ but\ does\ not\ display\ it.\r\n\ @param\ xPos\ the\ x\ coordinate\ at\ which\ to\ place\ the\ snowflake\r\n\ @param\ yPos\ the\ y\ coordinate\ at\ which\ to\ place\ the\ bottom\ of\ the\ snowflake\r\n\ @param\ size\r\n
+comment2.params=distance
+comment2.target=void\ fall(int)
+comment3.params=
+comment3.target=void\ buildSnowflake()
+comment3.text=\r\n\ Builds\ the\ different\ parts\ of\ the\ snow.\r\n\ The\ different\ sections\ are\ split\ up\ so\ that\r\n\ one\ method\ does\ not\ need\ to\ be\ responsible\ for\ all.\r\n
+numComments=4

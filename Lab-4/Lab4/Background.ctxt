@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Background
+comment0.text=\r\n\ Constructs\ a\ background\ for\ the\ canvas.\r\n\ \r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
+comment1.params=color
+comment1.target=Background(java.lang.String)
+comment1.text=\r\n\ Gathers\ the\ information\ for\ the\ background.\r\n\ Creates\ the\ shapes\ required.\r\n\ @param\ color\ the\ color\ for\ the\ background.\r\n
+comment2.params=sizeMultiplier
+comment2.target=void\ resize(double)
+comment3.params=
+comment3.target=java.lang.String\ getColor()
+comment3.text=\r\n\ Accessor\ for\ background\ color.\r\n\ @return\ the\ current\ color\ of\ the\ background.\r\n
+comment4.params=color
+comment4.target=void\ setColor(java.lang.String)
+comment4.text=\r\n\ Mutator\ for\ the\ background\ color.\r\n\ @param\ color\ the\ new\ color\ for\ the\ background.\r\n
+numComments=5

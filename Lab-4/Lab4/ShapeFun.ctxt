@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ShapeFun
+comment0.text=\r\n\ Playing\ with\ shapes\ for\ activity\ 1\ of\ Lab\ 4.\r\n\ CS\ 1440.\r\n\r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ It's\ all\ right\ here.\r\n\ \r\n\ @param\ args\ command\ line\ arguments\ (unused).\r\n
+numComments=2

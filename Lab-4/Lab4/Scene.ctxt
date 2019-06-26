@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Scene
+comment0.text=\r\n\ Creates\ a\ scene\ using\ simple\ shapes.\r\n\r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
+comment1.params=
+comment1.target=Scene()
+comment1.text=\r\n\ Constructs\ the\ scene.\r\n
+comment2.params=
+comment2.target=void\ animate()
+comment2.text=\r\n\ Animates\ the\ scene.\r\n
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ It\ all\ starts\ here.\r\n\ \r\n\ @param\ args\ command\ line\ arguments\ (unused).\r\n
+numComments=4

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Activity1PayStub
+comment0.text=\r\n\ Activity1PayStub\ class\ is\ part\ of\ Lab\ 2\ and\r\n\ creates\ a\ simple\ pay\ stub.\r\n\r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 06/13/2019\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ It\ all\ starts\ with\ the\ main\ method.\r\n\r\n\ @param\ args\ command-line\ arguments\ (not\ used)\r\n
+comment2.params=name\ ssn\ regHours\ otHours\ payRate
+comment2.target=void\ printPayStub(java.lang.String,\ java.lang.String,\ int,\ int,\ double)
+comment2.text=\r\n\ Prints\ out\ a\ pay\ stub\ based\ on\ employee\ info.\r\n\ @param\ name\ employee's\ name.\r\n\ @param\ ssn\ employee's\ ssn.\r\n\ @param\ regHours\ number\ of\ regular\ hours\ worked\r\n\ @param\ otHours\ number\ of\ overtime\ hours\ worked\r\n\ @param\ payRate\ dollar\ amount\ employee\ earns\ per\ hour\r\n
+numComments=3

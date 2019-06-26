@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Flower
+comment0.text=\r\n\ Constructs\ a\ beautiful\ flower\ using\ basic\ shapes.\r\n\r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
+comment1.params=xPos\ yPos\ headSize\ stemHeight\ headColor\ stemColor
+comment1.target=Flower(int,\ int,\ int,\ int,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Collects\ and\ calculates\ all\ required\ information\ for\ the\ flower.\r\n\ Builds\ the\ flower\ but\ does\ not\ display\ it.\r\n\ @param\ xPos\ the\ x\ coordinate\ at\ which\ to\ place\ the\ flower\r\n\ @param\ yPos\ the\ y\ coordinate\ at\ which\ to\ place\ the\ bottom\ of\ the\ flower\r\n\ @param\ headSize\ the\ diameter\ of\ the\ head\ (top)\ of\ the\ flower\r\n\ @param\ stemHeight\ the\ height\ for\ the\ stem\ of\ the\ flower\r\n\ @param\ headColor\ the\ color\ for\ the\ head\ of\ the\ flower\r\n\ @param\ stemColor\ the\ color\ for\ the\ stem\ of\ the\ flower\r\n
+comment2.params=
+comment2.target=void\ build()
+comment2.text=\r\n\ Builds\ the\ different\ parts\ of\ the\ flower.\r\n\ The\ different\ sections\ are\ split\ up\ so\ that\r\n\ one\ method\ does\ not\ need\ to\ be\ responsible\ for\ all.\r\n
+comment3.params=
+comment3.target=void\ makeStem()
+comment3.text=\r\n\ Creates\ the\ shapes\ for\ the\ stem\ of\ the\ flower.\r\n
+comment4.params=
+comment4.target=void\ makeTop()
+comment4.text=\r\n\ Creates\ the\ shapes\ for\ the\ top\ of\ the\ flower.\r\n
+comment5.params=
+comment5.target=void\ getSizes()
+comment5.text=\r\n\ Creates\ a\ hashmap\ of\ flower\ parts\ to\ their\ sizes.\r\n\ {\ String\ flowerPart\ \:\ int\ size\ }\r\n\ @param\ headSize\ the\ size\ of\ the\ head\ of\ the\ flower.\r\n\ \ \ \ \ \ used\ to\ correctly\ proportion\ the\ other\ flower\ parts.\r\n\ @return\ the\ hashmap\r\n
+comment6.params=
+comment6.target=void\ getPositions()
+comment6.text=\r\n\ Creates\ a\ hashmap\ of\ flower\ parts\ to\ their\ coordinates.\r\n\ {\ String\ flowerPartX\ \:\ int\ xCoordinate,\r\n\ \ \ String\ flowerPartY\ \:\ int\ yCoordinate\ }\r\n\ @param\ headSize\ the\ size\ of\ the\ head\ of\ the\ flower.\r\n\ \ \ \ \ \ used\ to\ correctly\ position\ the\ flower\ parts.\r\n\ @param\ height\ the\ height\ of\ the\ stem.\r\n\ \ \ \ \ \ used\ to\ correctly\ position\ the\ flower\ parts.\r\n\ @param\ x\ the\ x\ coordinate\ for\ the\ center\ of\ the\ flower\r\n\ @param\ y\ the\ y\ coordinate\ for\ the\ bottom\ of\ the\ flower\r\n\ @return\ the\ hashmap\r\n
+numComments=7

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Picture
+comment0.text=\r\n\ Constructs\ a\ picture\ using\ various\ scene\ objects.\r\n\r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/21/2019\r\n
+comment1.params=horizon\ skyColor\ groundColor
+comment1.target=Picture(int,\ java.lang.String,\ java.lang.String)
+comment2.params=newItem\ usePerspective
+comment2.target=void\ addItem(ComplexSceneObject,\ boolean)
+comment3.params=
+comment3.target=void\ render()
+comment4.params=
+comment4.target=void\ orderList()
+comment5.params=object
+comment5.target=void\ addPerspective(ComplexSceneObject)
+comment6.params=yCoord
+comment6.target=double\ getPerspectiveSizeMultiplier(int)
+numComments=7

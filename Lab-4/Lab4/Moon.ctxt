@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Moon
+comment0.text=\r\n\ Constructs\ a\ beautiful\ moon.\r\n\ \r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
+comment1.params=xPos\ yPos\ size\ color\ skyColor
+comment1.target=Moon(int,\ int,\ int,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Gathers\ the\ information\ for\ the\ foreground.\r\n\ Creates\ the\ shapes\ required.\r\n\ @param\ color\ the\ color\ for\ the\ foreground.\r\n\ @param\ skyColor\ the\ color\ of\ the\ sky.\r\n\ @param\ horizon\ how\ far\ up\ to\ extend\ the\ foreground.\r\n
+comment2.params=
+comment2.target=void\ makeMoon()
+numComments=3
