@@ -72,11 +72,11 @@ public class Barn extends ComplexSceneObject
             this.sizes.get("roofHeight"),
             this.sizes.get("roofWidth"),
             this.roofColor); 
-       this.allParts.add(wallRight);
-       this.allParts.add(wallLeft);
-       this.allParts.add(doorRight);
-       this.allParts.add(doorLeft);
-       this.allParts.add(roof);
+        this.allParts.add(wallRight);
+        this.allParts.add(wallLeft);
+        this.allParts.add(doorRight);
+        this.allParts.add(doorLeft);
+        this.allParts.add(roof);
     }
     
     /**
@@ -90,6 +90,7 @@ public class Barn extends ComplexSceneObject
     {
         int width = this.width;
         this.sizes = new HashMap<String, Integer>();
+        this.sizes.put("width", width);
         this.sizes.put("wall", width / 2);
         this.sizes.put("door", width / 4);
         this.sizes.put("roofWidth", (int) (width * 1.2));
@@ -110,7 +111,7 @@ public class Barn extends ComplexSceneObject
     {
         int x = this.xPos;
         int y = this.yPos;
-        int width = this.width;
+        int width = this.sizes.get("width");
         this.positions = new HashMap<String, Integer>();
         positions.put("wallRightX", x - width / 2 
             + this.sizes.get("wall") / 2 + 1);

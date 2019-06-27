@@ -26,12 +26,11 @@ public abstract class ComplexSceneObject extends SceneObject
     
     public void resize(double sizeMultiplier)
     {
-        System.out.println(sizeMultiplier);
         for (Map.Entry<String, Integer> entry : this.sizes.entrySet()) 
         {
             String key = entry.getKey();
             Integer value = entry.getValue();
-            this.sizes.put(key, (int)(value * sizeMultiplier));
+            this.sizes.put(key, (int)(value * sizeMultiplier) <= 0 ? 1 : (int)(value * sizeMultiplier));
         }
         this.getPositions();
         this.allParts.clear();

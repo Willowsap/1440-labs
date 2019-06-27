@@ -56,7 +56,7 @@ public class Flower extends ComplexSceneObject
      */
     private void makeStem()
     {
-        int numParts = this.stemHeight / this.sizes.get("stem");
+        int numParts = this.sizes.get("stemHeight") / this.sizes.get("stem");
         this.stem = new ComplexSquare[numParts];
         for (int i = 0; i < numParts; i++)
         {
@@ -93,6 +93,7 @@ public class Flower extends ComplexSceneObject
     {
         this.sizes = new HashMap<String, Integer>();
         sizes.put("top", headSize);
+        sizes.put("stemHeight", stemHeight);
         sizes.put("stem", (int) (this.headSize * 0.1) <= 0 ? 1 : (int) (headSize * 0.1));
     }
     
@@ -114,7 +115,7 @@ public class Flower extends ComplexSceneObject
         int y = this.yPos;
         this.positions = new HashMap<String, Integer>();
         positions.put("topX", x);
-        positions.put("topY", y - stemHeight);
+        positions.put("topY", y - this.sizes.get("stemHeight"));
         positions.put("stemX", x);
         positions.put("stemY", y);
     }

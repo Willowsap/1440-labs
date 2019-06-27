@@ -243,6 +243,16 @@ public class SnowPerson extends ComplexSceneObject
         sizes.put("button1", (int) (0.12 * size));
         sizes.put("button2", (int) (0.12 * size));
         sizes.put("button3", (int) (0.12 * size));
+        
+        for (Map.Entry<String, Integer> entry : this.sizes.entrySet()) 
+        {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            if (value <= 0)
+            {
+                this.sizes.put(key, 1);
+            }
+        }
     }
     
     /**

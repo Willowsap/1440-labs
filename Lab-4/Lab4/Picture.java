@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 /**
  * Constructs a picture using various scene objects.
  *
@@ -12,16 +13,26 @@ public class Picture
     private String groundColor;
     private Background sky;
     private Foreground ground;
-    private ArrayList<ComplexSceneObject> pictureItems;
+    private ArrayList<SceneObject> pictureItems;
     
     public Picture(int horizon, String skyColor, String groundColor)
     {
         this.skyColor = skyColor;
         this.horizon = horizon;
         this.groundColor = groundColor;
-        this.pictureItems = new ArrayList<ComplexSceneObject>();
+        this.pictureItems = new ArrayList<SceneObject>();
         this.sky = new Background(skyColor);
         this.ground = new Foreground(groundColor, horizon);
+    }
+    
+    public SceneObject getItem(int index)
+    {
+        return this.pictureItems.get(index);
+    }
+    
+    public void addSimpleItem(SceneObject newItem)
+    {
+        this.pictureItems.add(newItem);
     }
     
     public void addItem(ComplexSceneObject newItem, boolean usePerspective)
@@ -38,9 +49,25 @@ public class Picture
         this.sky.makeVisible();
         this.ground.makeVisible();
         this.orderList();
-        for(ComplexSceneObject o : this.pictureItems)
+        for(SceneObject o : this.pictureItems)
         {
             o.makeVisible();
+        }
+    }
+    
+    public void snow(int numFlakes)
+    {
+        Random rand = new Random(System.currentTimeMillis());
+        Circle snowFlake = new Circle();
+        snowFlake.changeColor("white");
+        snowFlake.changeSize(10);
+        for (int i = 0; i < numFlakes; i++)
+        {
+            snowFlake.setxPosition(rand.nextInt(280) + 10);
+            snowFlake.setyPosition(-10);
+            snowFlake.makeVisible();
+            snowFlake.slowMoveVertical(100);
+            snowFlake.makeInvisible();
         }
     }
     
@@ -56,7 +83,7 @@ public class Picture
                     index = j;
                 }  
             }  
-            ComplexSceneObject closerItem = this.pictureItems.get(index);   
+            SceneObject closerItem = this.pictureItems.get(index);   
             this.pictureItems.set(index, this.pictureItems.get(i)); 
             this.pictureItems.set(i, closerItem);  
         }  
@@ -71,6 +98,6 @@ public class Picture
     
     private double getPerspectiveSizeMultiplier(int yCoord)
     {
-      return Math.tan((yCoord - 100) / 4) / Math.tan(50);
+      return Math.tan(Math.toRadians((yCoord - 100) / 4.0)) / Math.tan(Math.toRadians(50.0));
     }
 }

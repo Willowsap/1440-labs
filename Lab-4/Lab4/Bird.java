@@ -45,7 +45,7 @@ public class Bird extends SceneObject
     public void fly(int distance)
     {
         int finalX = distance + this.xPos;
-        int step = finalX > this.xPos ? 10 : -10;
+        int step = finalX > this.xPos ? 20 : -20;
         int numSteps = distance / step;
         for (int i = 0; i < numSteps; i++)
         {
@@ -57,7 +57,7 @@ public class Bird extends SceneObject
             this.makeVisible();
             try
             {
-                Thread.sleep(250);
+                Thread.sleep(150);
             }
             catch(InterruptedException ex)
             {
