@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 /**
  * Subclassed by all different objects used in a scene.
+ * Provides basic functionality that all objects should have.
  * 
  * @author Willow Sapphire
  * @version 5/20/2019
  */
 public abstract class SceneObject
 {
-    public static final int GROUND = 300;
-    public static final int HORIZONTAL_CENTER = 150;
     //the center of the object
     protected int xPos;
     //the bottom of the object
@@ -16,6 +15,13 @@ public abstract class SceneObject
     //contains all shapes making up the object
     protected ArrayList<ComplexShape> allParts;
     
+    /**
+     * The super constructor for scene objects.
+     * Collects the x and y position of the object and
+     * creates the arraylist of shapes.
+     * @param xPos the x coordinate
+     * @param yPos the y coordinate
+     */
     public SceneObject(int xPos, int yPos)
     {
         this.xPos = xPos;
@@ -23,11 +29,19 @@ public abstract class SceneObject
         this.allParts = new ArrayList<ComplexShape>();
     }
     
+    /**
+     * Accessor method for the object's x coordinate.
+     * @return the x coordinate.
+     */
     public int getX()
     {
         return this.xPos;
     }
     
+    /**
+     * Accessor method for the object's y coordinate.
+     * @return the y coordinate.
+     */
     public int getY()
     {
         return this.yPos;
@@ -53,24 +67,24 @@ public abstract class SceneObject
     }
     
     /**
-     * Makes the heart visible on the canvas.
+     * Makes the object visible on the canvas.
      */
     public void makeVisible()
     {
         for (ComplexShape part : this.allParts)
-       {
-           part.makeVisible();
-       }
+        {
+            part.makeVisible();
+        }
     }
     
     /**
-     * Makes the heart invisible on the canvas.
+     * Makes the object invisible on the canvas.
      */
     public void makeInvisible()
     {
         for (ComplexShape part : this.allParts)
-       {
-           part.makeInvisible();
-       }
+        {
+            part.makeInvisible();
+        }
     }
 }

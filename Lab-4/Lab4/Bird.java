@@ -1,12 +1,12 @@
 import java.util.HashMap;
-import java.util.ArrayList;
+
 /**
  * Constructs a bird.
  *
  * @author Willow Sapphire
  * @version 6/20/2019
  */
-public class Bird extends SceneObject
+public class Bird extends ComplexSceneObject
 {
     private int bodySize;
     private String color;
@@ -37,11 +37,15 @@ public class Bird extends SceneObject
         this.color = color;
         this.beakColor = "yellow";
         this.eyeColor = "yellow";
-        this.sizes = getSizes(bodySize);
-        this.positions = getPositions(bodySize, xPos, yPos);
-        this.buildbird();
+        this.getSizes();
+        this.getPositions();
+        this.build();
     }
     
+    /**
+     * Makes the bird fly across the screen.
+     * @param distance the distance (in pixels) to fly
+     */
     public void fly(int distance)
     {
         int finalX = distance + this.xPos;
@@ -59,7 +63,7 @@ public class Bird extends SceneObject
             {
                 Thread.sleep(150);
             }
-            catch(InterruptedException ex)
+            catch (InterruptedException ex)
             {
                 Thread.currentThread().interrupt();
             }
@@ -69,7 +73,7 @@ public class Bird extends SceneObject
     /**
      * Builds the shapes for the bird.
      */
-    private void buildbird()
+    protected void build()
     {
         this.body = new ComplexCircle(
             this.positions.get("bodyX"), 
@@ -108,49 +112,43 @@ public class Bird extends SceneObject
     /**
      * Creates a hashmap of bird parts to their sizes.
      * { String birdPart : int size }
-     * @param bodySize the size of the head of the bird.
-     *      used to correctly proportion the other bird parts.
-     * @return the hashmap
      */
-    private HashMap<String, Integer> getSizes(int bodySize)
+    protected void getSizes()
     {
-        HashMap<String, Integer> sizes = new HashMap<String, Integer>();
-        sizes.put("body", bodySize);
-        sizes.put("head", (int) (bodySize * 0.7));
-        sizes.put("eye", (int) (bodySize * 0.2));
-        sizes.put("beakHeight", (int) (bodySize * 0.3));
-        sizes.put("beakWidth", (int) (bodySize * 0.3));
-        sizes.put("tailHeight", (int) (bodySize * 0.9));
-        sizes.put("tailWidth", (int) (bodySize * 0.9));
-        return sizes;
+        this.sizes = new HashMap<String, Integer>();
+        this.sizes.put("body", this.bodySize);
+        this.sizes.put("head", (int) (this.bodySize * 0.7));
+        this.sizes.put("eye", (int) (this.bodySize * 0.2));
+        this.sizes.put("beakHeight", (int) (this.bodySize * 0.3));
+        this.sizes.put("beakWidth", (int) (this.bodySize * 0.3));
+        this.sizes.put("tailHeight", (int) (this.bodySize * 0.9));
+        this.sizes.put("tailWidth", (int) (this.bodySize * 0.9));
     }
     
     /**
      * Creates a hashmap of bird parts to their coordinates.
      * { String birdPartX : int xCoordinate,
      *   String birdPartY : int yCoordinate }
-     * @param bodySize the size of the body of the bird.
-     *      used to correctly position the bird parts.
-     * @param x the x coordinate for the center of the bird
-     * @param y the y coordinate for the bottom of the bird
-     * @return the hashmap
      */
-    private HashMap<String, Integer> getPositions(int bodySize, int x, int y)
+    protected void getPositions()
     {
-        HashMap<String, Integer> positions = new HashMap<String, Integer>();
-        positions.put("bodyX", x);
-        positions.put("bodyY", y);
-        positions.put("headX", x + (int) (this.sizes.get("body") * 0.5));
-        positions.put("headY", y - (int) (this.sizes.get("body") * 0.5));
-        positions.put("eyeX", positions.get("headX"));
-        positions.put("eyeY", (int) (positions.get("headY") 
+        this.positions = new HashMap<String, Integer>();
+        this.positions.put("bodyX", this.xPos);
+        this.positions.put("bodyY", this.yPos);
+        this.positions.put("headX", this.xPos 
+            + (int) (this.sizes.get("body") * 0.5));
+        this.positions.put("headY", this.yPos 
+            - (int) (this.sizes.get("body") * 0.5));
+        this.positions.put("eyeX", this.positions.get("headX"));
+        this.positions.put("eyeY", (int) (this.positions.get("headY") 
             - this.sizes.get("head") * 0.5));
-        positions.put("beakX", (int) (positions.get("headX") 
+        this.positions.put("beakX", (int) (this.positions.get("headX") 
             + this.sizes.get("head") * 0.7));
-        positions.put("beakY", (int) (positions.get("headY") 
+        this.positions.put("beakY", (int) (this.positions.get("headY") 
             - this.sizes.get("head") * 0.34));
-        positions.put("tailX", x - (int) (this.sizes.get("body") * 0.3));
-        positions.put("tailY", y - (int) (this.sizes.get("body") * 0.4));
-        return positions;
+        this.positions.put("tailX", this.xPos 
+            - (int) (this.sizes.get("body") * 0.3));
+        this.positions.put("tailY", this.yPos 
+            - (int) (this.sizes.get("body") * 0.4));
     }
 }

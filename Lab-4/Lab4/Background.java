@@ -6,6 +6,7 @@
  */
 public class Background extends SceneObject
 {
+    private String color;
     private ComplexSquare background;
     
     /**
@@ -15,14 +16,10 @@ public class Background extends SceneObject
      */
     public Background(String color)
     {
-        super(150, 300);
-        background = new ComplexSquare(150, 300, 300, color);
+        super(Picture.HORIZONTAL_CENTER, Picture.GROUND);
+        this.color = color;
+        this.background = new ComplexSquare(this.xPos, this.yPos, 300, color);
         this.allParts.add(background);
-    }
-    
-    public void resize(double sizeMultiplier)
-    {
-        System.out.println("Cannot resize the background");
     }
     
     /**

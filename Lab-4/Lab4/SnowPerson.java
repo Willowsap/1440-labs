@@ -1,7 +1,4 @@
 import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.lang.Thread;
 /**
  * Constructs a beautiful snowperson.
  * 
@@ -49,7 +46,7 @@ public class SnowPerson extends ComplexSceneObject
      * @param bodyColor the color for the body of the snowperson
      * @param faceColor the color for the facial features of the snowperson
      * @param clothesColor the color for the clothes of the snowperson
-     * 
+     * @param outlineColor the color for the outline of the snowperson
      */
     public SnowPerson(int xPos, int yPos, int size, String bodyColor, 
         String faceColor, String clothesColor, String outlineColor)
@@ -65,6 +62,10 @@ public class SnowPerson extends ComplexSceneObject
         this.build();
     }
     
+    /**
+     * Makes the snowperson walk across the screen.
+     * @param distance the distance (in pixels) for the snowperson to walk.
+     */
     public void walk(int distance)
     {
         int finalX = distance + this.xPos;
@@ -82,7 +83,7 @@ public class SnowPerson extends ComplexSceneObject
             {
                 Thread.sleep(250);
             }
-            catch(InterruptedException ex)
+            catch (InterruptedException ex)
             {
                 Thread.currentThread().interrupt();
             }
@@ -135,12 +136,12 @@ public class SnowPerson extends ComplexSceneObject
             this.positions.get("headY"),
             this.sizes.get("head"), 
             this.bodyColor);
-        allParts.add(this.abdomenOutline);
-        allParts.add(this.thoraxOutline);
-        allParts.add(this.headOutline);
-        allParts.add(this.abdomen);
-        allParts.add(this.thorax);
-        allParts.add(this.head);
+        this.allParts.add(this.abdomenOutline);
+        this.allParts.add(this.thoraxOutline);
+        this.allParts.add(this.headOutline);
+        this.allParts.add(this.abdomen);
+        this.allParts.add(this.thorax);
+        this.allParts.add(this.head);
     }
     
     /**
@@ -173,11 +174,11 @@ public class SnowPerson extends ComplexSceneObject
             this.positions.get("eye2Y"),
             this.sizes.get("eye"),
             this.faceColor);
-        allParts.add(this.mouth);
-        allParts.add(this.mouthNegative);
-        allParts.add(this.mouthNegative2);
-        allParts.add(this.eye1);
-        allParts.add(this.eye2);
+        this.allParts.add(this.mouth);
+        this.allParts.add(this.mouthNegative);
+        this.allParts.add(this.mouthNegative2);
+        this.allParts.add(this.eye1);
+        this.allParts.add(this.eye2);
     }
     
     /**
@@ -200,120 +201,108 @@ public class SnowPerson extends ComplexSceneObject
             this.positions.get("button3Y"),
             this.sizes.get("button3"), 
             this.clothesColor);
-        allParts.add(this.button1);
-        allParts.add(this.button2);
-        allParts.add(this.button3);
+        this.allParts.add(this.button1);
+        this.allParts.add(this.button2);
+        this.allParts.add(this.button3);
     }
     
     /**
      * Constructs a hashmap of snowperson parts to their sizes.
      * { String part : int size }
-     * @param size the size of the snowperson (abdomen diameter)
-     *      used to proportion the sizes of the parts.
-     * @return the hashmap
      */
     protected void getSizes()
     {
         this.sizes = new HashMap<String, Integer>();
         // Body sizes
-        sizes.put("abdomen", (int) (1.0 * size));
-        sizes.put("thorax", (int) (0.70 * size));
-        sizes.put("head", (int) (0.50 * size));
-        int outlineWidth = (int) (.05 * sizes.get("abdomen"));
-        sizes.put("abdomenOutline", sizes.get("abdomen") + outlineWidth);
-        sizes.put("thoraxOutline", sizes.get("thorax") + outlineWidth);
-        sizes.put("headOutline", sizes.get("head") + outlineWidth);
+        this.sizes.put("abdomen", (int) (1.0 * this.size));
+        this.sizes.put("thorax", (int) (0.70 * this.size));
+        this.sizes.put("head", (int) (0.50 * this.size));
+        
+        int outlineWidth = (int) (.05 * this.sizes.get("abdomen"));
+        this.sizes.put("abdomenOutline", 
+            this.sizes.get("abdomen") + outlineWidth);
+        this.sizes.put("thoraxOutline", 
+            this.sizes.get("thorax") + outlineWidth);
+        this.sizes.put("headOutline", 
+            this.sizes.get("head") + outlineWidth);
         
         // face sizes
-        sizes.put("mouth", (int) (0.26 * size));
-        sizes.put("eye", (int) (0.10 * size));
+        this.sizes.put("mouth", (int) (0.26 * this.size));
+        this.sizes.put("eye", (int) (0.10 * this.size));
         
         // arm sizes
-        sizes.put("hand", (int) (0.20 * size));
-        sizes.put("arm1Height", (int) (0.48 * size));
-        sizes.put("arm1Width", (int) (0.88 * size));
-        sizes.put("forearm1Height", (int) (0.58 * size));
-        sizes.put("forearm1Width", (int) (0.88 * size));
-        sizes.put("arm2Height", (int) (0.38 * size));
-        sizes.put("arm2Width", (int) (1.0 * size));
-        sizes.put("forearm2Height", (int) (0.38 * size));
-        sizes.put("forearm2Width", (int) (1.0 * size));
+        this.sizes.put("hand", (int) (0.20 * this.size));
+        this.sizes.put("arm1Height", (int) (0.48 * this.size));
+        this.sizes.put("arm1Width", (int) (0.88 * this.size));
+        this.sizes.put("forearm1Height", (int) (0.58 * this.size));
+        this.sizes.put("forearm1Width", (int) (0.88 * this.size));
+        this.sizes.put("arm2Height", (int) (0.38 * this.size));
+        this.sizes.put("arm2Width", (int) (1.0 * this.size));
+        this.sizes.put("forearm2Height", (int) (0.38 * this.size));
+        this.sizes.put("forearm2Width", (int) (1.0 * this.size));
         
         // clothes sizes
-        sizes.put("button1", (int) (0.12 * size));
-        sizes.put("button2", (int) (0.12 * size));
-        sizes.put("button3", (int) (0.12 * size));
-        
-        for (Map.Entry<String, Integer> entry : this.sizes.entrySet()) 
-        {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-            if (value <= 0)
-            {
-                this.sizes.put(key, 1);
-            }
-        }
+        this.sizes.put("button1", (int) (0.12 * this.size));
+        this.sizes.put("button2", (int) (0.12 * this.size));
+        this.sizes.put("button3", (int) (0.12 * this.size));
     }
     
     /**
      * Constructs a hashmap of snowperson parts to their coordinate locations.
      * { String partX : int xCoordinate,
      *   String partY : int yCoordinate }
-     * @param size the size of the snowperson (abdomen diameter)
-     *      used to proportion the positions of the parts.
-     * @param x the x coordinate for the center of the snowperson
-     * @param y the y coordinate for the bottom of the snowperson
-     * @return the hashmap
      */
     protected void getPositions()
     {
-        positions = new HashMap<String, Integer>();
-        int x = this.xPos;
-        int y = this.yPos;
-            
+        this.positions = new HashMap<String, Integer>();
         // Body positions
-        positions.put("abdomenX", x);
-        positions.put("abdomenY", y);
-        positions.put("thoraxX", x);
-        positions.put("thoraxY", positions.get("abdomenY") 
+        this.positions.put("abdomenX", this.xPos);
+        this.positions.put("abdomenY", this.yPos);
+        this.positions.put("thoraxX", this.xPos);
+        this.positions.put("thoraxY", this.positions.get("abdomenY") 
             - (int) (this.sizes.get("abdomen") * 0.9));
-        positions.put("headX", x);
-        positions.put("headY", positions.get("thoraxY") 
+        this.positions.put("headX", this.xPos);
+        this.positions.put("headY", this.positions.get("thoraxY") 
             - (int) (this.sizes.get("thorax") * 0.9));
-        positions.put("abdomenOutlineX", x);
-        positions.put("abdomenOutlineY", positions.get("abdomenY") 
-            + ((this.sizes.get("abdomenOutline") - this.sizes.get("abdomen")) / 2));
-        positions.put("thoraxOutlineX", x);
-        positions.put("thoraxOutlineY", positions.get("thoraxY") 
-            + ((this.sizes.get("thoraxOutline") - this.sizes.get("thorax")) / 2));
-        positions.put("headOutlineX", x);
-        positions.put("headOutlineY", positions.get("headY") 
-            + ((this.sizes.get("headOutline") - this.sizes.get("head")) / 2));
+        this.positions.put("abdomenOutlineX", this.xPos);
+        this.positions.put("abdomenOutlineY", this.positions.get("abdomenY") 
+            + ((this.sizes.get("abdomenOutline") 
+            - this.sizes.get("abdomen")) / 2));
+        this.positions.put("thoraxOutlineX", this.xPos);
+        this.positions.put("thoraxOutlineY", this.positions.get("thoraxY") 
+            + ((this.sizes.get("thoraxOutline") 
+            - this.sizes.get("thorax")) / 2));
+        this.positions.put("headOutlineX", this.xPos);
+        this.positions.put("headOutlineY", this.positions.get("headY") 
+            + ((this.sizes.get("headOutline") 
+            - this.sizes.get("head")) / 2));
         
-        // face positions
-        positions.put("mouthX", x);
-        positions.put("mouthY", positions.get("headY") 
+        // face this.positions
+        this.positions.put("mouthX", this.xPos);
+        this.positions.put("mouthY", this.positions.get("headY") 
             - (int) (this.sizes.get("head") * 0.16));
-        positions.put("mouthNegative1X", x);
-        positions.put("mouthNegative1Y", positions.get("mouthY") 
+        this.positions.put("mouthNegative1X", this.xPos);
+        this.positions.put("mouthNegative1Y", this.positions.get("mouthY") 
             - (int) (this.sizes.get("head") * 0.12));
-        positions.put("mouthNegative2X", x);
-        positions.put("mouthNegative2Y", positions.get("mouthY") 
+        this.positions.put("mouthNegative2X", this.xPos);
+        this.positions.put("mouthNegative2Y", this.positions.get("mouthY") 
             - (int) (this.sizes.get("head") * 0.2));
-        positions.put("eye1X", x - (int) (this.sizes.get("head") * 0.18));
-        positions.put("eye1Y", positions.get("headY") 
+        this.positions.put("eye1X", this.xPos 
+            - (int) (this.sizes.get("head") * 0.18));
+        this.positions.put("eye1Y", this.positions.get("headY") 
             - (int) (this.sizes.get("head") * 0.55));
-        positions.put("eye2X", x + (int) (this.sizes.get("head") * 0.18));
-        positions.put("eye2Y", positions.get("headY") 
+        this.positions.put("eye2X", this.xPos 
+            + (int) (this.sizes.get("head") * 0.18));
+        this.positions.put("eye2Y", this.positions.get("headY") 
             - (int) (this.sizes.get("head") * 0.55));
-        // clothes positions
-        positions.put("button1X", positions.get("abdomenX"));
-        positions.put("button1Y", positions.get("thoraxY"));
-        positions.put("button2X", positions.get("abdomenX"));
-        positions.put("button2Y", positions.get("thoraxY") 
+        // clothes this.positions
+        this.positions.put("button1X", this.positions.get("abdomenX"));
+        this.positions.put("button1Y", this.positions.get("thoraxY"));
+        this.positions.put("button2X", this.positions.get("abdomenX"));
+        this.positions.put("button2Y", this.positions.get("thoraxY") 
             - (int) (this.sizes.get("thorax") * 0.3));
-        positions.put("button3X", positions.get("abdomenX"));
-        positions.put("button3Y", positions.get("thoraxY") 
+        this.positions.put("button3X", this.positions.get("abdomenX"));
+        this.positions.put("button3Y", this.positions.get("thoraxY") 
             - (int) (this.sizes.get("thorax") * 0.6));
     }
 }

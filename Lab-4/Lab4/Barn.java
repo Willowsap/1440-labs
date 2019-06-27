@@ -82,50 +82,43 @@ public class Barn extends ComplexSceneObject
     /**
      * Creates a hashmap of barn parts to their sizes.
      * { String barnPart : int size }
-     * @param width the width of the of the barn.
-     *      used to correctly proportion the other barn parts.
-     * @return the hashmap
      */
     protected void getSizes()
     {
-        int width = this.width;
         this.sizes = new HashMap<String, Integer>();
-        this.sizes.put("width", width);
-        this.sizes.put("wall", width / 2);
-        this.sizes.put("door", width / 4);
-        this.sizes.put("roofWidth", (int) (width * 1.2));
-        this.sizes.put("roofHeight", (int) (width * 0.6));
+        this.sizes.put("width", this.width);
+        this.sizes.put("wall", this.width / 2);
+        this.sizes.put("door", this.width / 4);
+        this.sizes.put("roofWidth", (int) (this.width * 1.2));
+        this.sizes.put("roofHeight", (int) (this.width * 0.6));
     }
     
     /**
      * Creates a hashmap of barn parts to their coordinates.
      * { String barnPartX : int xCoordinate,
      *   String barnPartY : int yCoordinate }
-     * @param width the width of the of the barn.
-     *      used to correctly proportion the other barn parts.
-     * @param x the x coordinate for the center of the barn
-     * @param y the y coordinate for the bottom of the barn
-     * @return the hashmap
      */
     protected void getPositions()
     {
-        int x = this.xPos;
-        int y = this.yPos;
-        int width = this.sizes.get("width");
         this.positions = new HashMap<String, Integer>();
-        positions.put("wallRightX", x - width / 2 
+        this.positions.put("wallRightX", this.xPos 
+            - this.sizes.get("width") / 2 
             + this.sizes.get("wall") / 2 + 1);
-        positions.put("wallRightY", y);
-        positions.put("wallLeftX", x + width / 2 
+        this.positions.put("wallRightY", this.yPos);
+        this.positions.put("wallLeftX", this.xPos 
+            + this.sizes.get("width") / 2 
             - this.sizes.get("wall") / 2);
-        positions.put("wallLeftY", y);
-        positions.put("doorRightX", x - width / 4 
+        this.positions.put("wallLeftY", this.yPos);
+        this.positions.put("doorRightX", this.xPos 
+            - this.sizes.get("width") / 4 
             + this.sizes.get("door") / 2 + 1);
-        positions.put("doorRightY", y);
-        positions.put("doorLeftX", x + width / 4 
+        this.positions.put("doorRightY", this.yPos);
+        this.positions.put("doorLeftX", this.xPos 
+            + this.sizes.get("width") / 4 
             - this.sizes.get("door") / 2);
-        positions.put("doorLeftY", y);
-        positions.put("roofX", x);
-        positions.put("roofY", y - width / 2);
+        this.positions.put("doorLeftY", this.yPos);
+        this.positions.put("roofX", this.xPos);
+        this.positions.put("roofY", this.yPos 
+            - this.sizes.get("width") / 2);
     }
 }

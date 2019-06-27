@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=ComplexSceneObject
-comment0.text=\r\n\ \ Describe\ the\ ComplexSceneObject\ class\ here.\r\n
+comment0.text=\r\n\ Blueprint\ for\ creating\ complex\ scene\ objects.\r\n\ \r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 6/20/2019\r\n
 comment1.params=xPos\ yPos
 comment1.target=ComplexSceneObject(int,\ int)
+comment1.text=\r\n\ Creates\ the\ scene\ object.\r\n\ @param\ xPos\ the\ x\ coordinate.\r\n\ @param\ yPos\ the\ y\ coordinate.\r\n
 comment2.params=sizeMultiplier
 comment2.target=void\ resize(double)
+comment2.text=\r\n\ Resizes\ the\ object\ based\ on\ a\ given\ multiplier.\r\n\ ex.\ a\ multiplier\ of\ 2\ would\ double\ the\ size\ of\ the\ object.\r\n\ @param\ sizeMultiplier\ the\ factor\ by\ which\ to\ change\ the\ object's\ size.\r\n
 comment3.params=
 comment3.target=void\ build()
-comment3.text=\r\n\ Builds\ the\ shapes\ for\ the\ snowperson.\r\n\ The\ different\ sections\ of\ split\ up\ for\ ease\ of\ reading.\r\n
+comment3.text=\r\n\ Builds\ the\ object.\r\n\ The\ different\ sections\ of\ split\ up\ for\ ease\ of\ reading.\r\n
 comment4.params=
 comment4.target=void\ getSizes()
+comment4.text=\r\n\ Creates\ a\ hashmap\ of\ partNames\ to\ sizes.\r\n\ Hashmap\ is\ stored\ in\ this.sizes\r\n
 comment5.params=
 comment5.target=void\ getPositions()
+comment5.text=\r\n\ Creates\ of\ hashmap\ of\ partNames\ to\ x\ and\ y\ positions.\r\n\ Hashmap\ is\ stored\ in\ this.positions\r\n
 numComments=6

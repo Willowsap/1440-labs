@@ -6,8 +6,6 @@
  */
 public class Foreground extends SceneObject
 {
-    public static final int GROUND = 300;
-    public static final int HORIZONTAL_CENTER = 150;
     public static final int SIZE = 300;
     
     private int horizon;
@@ -22,15 +20,10 @@ public class Foreground extends SceneObject
      */
     public Foreground(String color, int horizon)
     {
-        super(HORIZONTAL_CENTER, GROUND+horizon);
+        super(Picture.HORIZONTAL_CENTER, Picture.GROUND + horizon);
         this.color = color;
-        this.buildForeground();
-    }
-    
-    public void buildForeground()
-    {
-        foreground = new ComplexSquare(this.xPos, this.yPos, SIZE, this.color);
-        this.allParts.clear();
+        this.foreground = new ComplexSquare(
+            this.xPos, this.yPos, SIZE, this.color);
         this.allParts.add(foreground);
     }
     

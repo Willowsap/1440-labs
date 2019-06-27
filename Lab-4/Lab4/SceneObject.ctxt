@@ -1,12 +1,15 @@
 #BlueJ class context
 comment0.target=SceneObject
-comment0.text=\r\n\ Subclassed\ by\ all\ different\ objects\ used\ in\ a\ scene.\r\n\ \r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 5/20/2019\r\n
+comment0.text=\r\n\ Subclassed\ by\ all\ different\ objects\ used\ in\ a\ scene.\r\n\ Provides\ basic\ functionality\ that\ all\ objects\ should\ have.\r\n\ \r\n\ @author\ Willow\ Sapphire\r\n\ @version\ 5/20/2019\r\n
 comment1.params=xPos\ yPos
 comment1.target=SceneObject(int,\ int)
+comment1.text=\r\n\ The\ super\ constructor\ for\ scene\ objects.\r\n\ Collects\ the\ x\ and\ y\ position\ of\ the\ object\ and\r\n\ creates\ the\ arraylist\ of\ shapes.\r\n\ @param\ xPos\ the\ x\ coordinate\r\n\ @param\ yPos\ the\ y\ coordinate\r\n
 comment2.params=
 comment2.target=int\ getX()
+comment2.text=\r\n\ Accessor\ method\ for\ the\ object's\ x\ coordinate.\r\n\ @return\ the\ x\ coordinate.\r\n
 comment3.params=
 comment3.target=int\ getY()
+comment3.text=\r\n\ Accessor\ method\ for\ the\ object's\ y\ coordinate.\r\n\ @return\ the\ y\ coordinate.\r\n
 comment4.params=xPos
 comment4.target=void\ setX(int)
 comment4.text=\r\n\ set\ the\ center\ of\ the\ object\ to\ the\ given\ x\ coordinate.\r\n\ @param\ xPos\ the\ x\ coordinate\ to\ place\ the\ object.\r\n
@@ -15,8 +18,8 @@ comment5.target=void\ setY(int)
 comment5.text=\r\n\ set\ the\ bottom\ of\ the\ object\ to\ the\ given\ y\ coordinate.\r\n\ @param\ yPos\ the\ y\ coordinate\ to\ place\ the\ object.\r\n
 comment6.params=
 comment6.target=void\ makeVisible()
-comment6.text=\r\n\ Makes\ the\ heart\ visible\ on\ the\ canvas.\r\n
+comment6.text=\r\n\ Makes\ the\ object\ visible\ on\ the\ canvas.\r\n
 comment7.params=
 comment7.target=void\ makeInvisible()
-comment7.text=\r\n\ Makes\ the\ heart\ invisible\ on\ the\ canvas.\r\n
+comment7.text=\r\n\ Makes\ the\ object\ invisible\ on\ the\ canvas.\r\n
 numComments=8

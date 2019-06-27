@@ -85,38 +85,27 @@ public class Flower extends ComplexSceneObject
     /**
      * Creates a hashmap of flower parts to their sizes.
      * { String flowerPart : int size }
-     * @param headSize the size of the head of the flower.
-     *      used to correctly proportion the other flower parts.
-     * @return the hashmap
      */
     protected void getSizes()
     {
         this.sizes = new HashMap<String, Integer>();
-        sizes.put("top", headSize);
-        sizes.put("stemHeight", stemHeight);
-        sizes.put("stem", (int) (this.headSize * 0.1) <= 0 ? 1 : (int) (headSize * 0.1));
+        this.sizes.put("top", this.headSize);
+        this.sizes.put("stemHeight", this.stemHeight);
+        this.sizes.put("stem", (int) (this.headSize * 0.1) 
+            <= 0 ? 1 : (int) (this.headSize * 0.1));
     }
     
     /**
      * Creates a hashmap of flower parts to their coordinates.
      * { String flowerPartX : int xCoordinate,
      *   String flowerPartY : int yCoordinate }
-     * @param headSize the size of the head of the flower.
-     *      used to correctly position the flower parts.
-     * @param height the height of the stem.
-     *      used to correctly position the flower parts.
-     * @param x the x coordinate for the center of the flower
-     * @param y the y coordinate for the bottom of the flower
-     * @return the hashmap
      */
     protected void getPositions()
     {
-        int x = this.xPos;
-        int y = this.yPos;
         this.positions = new HashMap<String, Integer>();
-        positions.put("topX", x);
-        positions.put("topY", y - this.sizes.get("stemHeight"));
-        positions.put("stemX", x);
-        positions.put("stemY", y);
+        this.positions.put("topX", this.xPos);
+        this.positions.put("topY", this.yPos - this.sizes.get("stemHeight"));
+        this.positions.put("stemX", this.xPos);
+        this.positions.put("stemY", this.yPos);
     }
 }
